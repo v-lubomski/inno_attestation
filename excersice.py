@@ -1,6 +1,5 @@
 import json
-from itertools import product, groupby
-from pprint import pprint
+from itertools import product
 
 
 class TooMuchParametersException(Exception):
@@ -9,7 +8,7 @@ class TooMuchParametersException(Exception):
         super().__init__()
 
     def __str__(self) -> str:
-        return 'Достигнуто предельное количество возможных вариантов: более 100'
+        return 'Достигнуто предельное количество вариантов: более 100'
 
 
 def read_json(filename: str) -> dict:
@@ -41,15 +40,3 @@ def calculate(data: dict) -> list:
             raise TooMuchParametersException
 
     return result_list
-
-
-pprint(calculate(planet_data))
-
-
-
-
-
-
-
-
-
